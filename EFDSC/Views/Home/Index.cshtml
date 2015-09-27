@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@Html.Partial("_Carousel")
+<div class="row" style="padding-top: 3%;">
+    <div class="col-md-3" style="text-align: center;">
+        <div class="jumbotronYellow" style="text-align: center; padding: 10px; margin-bottom: auto;">
+            <h2>New Members</h2>
+            <p style="font-size: 13px; line-height: 1.2;">We cater for all age groups and abilities, learn to swim to squad swimming to masters. If you are interested in joining us please contact Suzanne Peddle - Membership Secretary on 01992 815103 or membership@efdsc.org</p>
+        </div>
+        <div>
+            <h2 style="border-bottom: gray; border-bottom-style: solid; border-bottom-width: thin;">Main Links</h2>
+                @foreach (var link in ViewBag.Links)
+            {
+                    <div class="text-center" style="border-bottom: gray; border-bottom-style: solid; border-bottom-width: thin;">
+                        <a href="@link.URL">@link.LinkText</a>
+                    </div>
+                }
+        </div>
+        <div>
+            <h2>Sponsers</h2>
+            <a style="display: block;" href="http://www.jackpetcheyfoundation.org.uk" target="_blank">
+                <img height="132" width="130" src="@Url.Content("~/Content/Images/JPFLogo_Small.jpg")" />
+            </a>
+            <a style="display: block;" href="http://www.eppingforestdc.gov.uk" target="_blank">
+                <img height="35" width="119" src="@Url.Content("~/Content/Images/efdc.jpg")" />
+            </a>
+            <a style="display: block;" href="http://www.britishswimming.org/vsite/vnavsite/page/directory/0,10853,5026-142677-159893-nav-list,00.html" target="_blank">
+                <img height="100" width="100" src="@Url.Content("~/Content/Images/asa.jpg")" />
+            </a>           
+        </div>
+    </div>
+    <div class="col-md-9" style="text-align: center;">
+        <div class="jumbotron" style="text-align: center; padding: 10px; margin-bottom: auto;">
+            <h2>Mission Statement</h2>
+            <p style="font-size: 13px; line-height: 1.2;">Epping Forest District Swimming Club aims to be a club for the community working together at all levels and ages to inspire swimmers to reach their full potential. We aim to achieve this by providing a secure and caring environment where every member is valued and encouraged to work together as a team to achieve their goals.</p>
+        </div>
+        @Html.Partial("_AnnouncementsPartial", (List<EFDSC.Models.Announcement>) @ViewBag.Announcements)
+    </div>
+</div>
+
+@*<div class="row">
+    <div class="col-md-4">
+        <h2>Getting started</h2>
+        <p>
+            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+            enables a clean separation of concerns and gives you full control over markup
+            for enjoyable, agile development.
+        </p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Get more libraries</h2>
+        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>Web Hosting</h2>
+        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    </div>
+</div>*@

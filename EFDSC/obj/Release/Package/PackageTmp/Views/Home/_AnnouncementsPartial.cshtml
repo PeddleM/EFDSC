@@ -1,0 +1,13 @@
+﻿@Styles.Render("~/Content/Custom.css")
+
+<div>
+    <h2>Announcements</h2>
+
+    @foreach (var announcement in Model)
+    {
+        <div class="text-left">
+            <b>@announcement.Title - @announcement.Date</b>
+            <p>@announcement.Content</p>
+        </div>
+    }
+</div>
