@@ -221,12 +221,14 @@
     <Content Include="Content\Custom.css" />
     <Content Include="Content\Images\asa.jpg" />
     <Content Include="Content\Images\efdc.jpg" />
-    <Content Include="Content\Images\efdsc1.jpg" />
-    <Content Include="Content\Images\efdsc2.jpg" />
     <Content Include="Content\Images\EFDSCLogo.jpg" />
     <Content Include="Content\Images\follow-facebook.gif" />
     <Content Include="Content\Images\follow-twitter.gif" />
     <Content Include="Content\Images\JPFLogo_Small.jpg" />
+    <Content Include="Content\Images\slide1.JPG" />
+    <Content Include="Content\Images\slide2.JPG" />
+    <Content Include="Content\Images\slide3.JPG" />
+    <Content Include="Content\Images\slide4.JPG" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
