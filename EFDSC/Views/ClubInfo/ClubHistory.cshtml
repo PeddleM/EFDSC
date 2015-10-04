@@ -1,0 +1,255 @@
+﻿
+@{
+    ViewBag.Title = "ClubHistory";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var result = "";
+    char[] delimiterChar = new char[] { '\r', '\n' };
+
+    var earlyYearsFile = Server.MapPath("~/App_Data/ClubInfo/ClubHistory/earlyYears.txt");
+    Array earlyYearsData = File.ReadAllLines(earlyYearsFile);
+
+    var competitiveRecordFile = Server.MapPath("~/App_Data/ClubInfo/ClubHistory/competitive.txt");
+    Array competitiveRecordData = File.ReadAllLines(competitiveRecordFile);
+
+    var modernPentathlonFile = Server.MapPath("~/App_Data/ClubInfo/ClubHistory/modern.txt");
+    Array modernPentathlonData = File.ReadAllLines(modernPentathlonFile);
+
+    var clubChampionshipFile = Server.MapPath("~/App_Data/ClubInfo/ClubHistory/championships.txt");
+    Array clubChampionshipData = File.ReadAllLines(clubChampionshipFile);
+
+    var openGalaFile = Server.MapPath("~/App_Data/ClubInfo/ClubHistory/open.txt");
+    Array openGalaData = File.ReadAllLines(openGalaFile);
+
+    var recordsChampionshipFile = Server.MapPath("~/App_Data/ClubInfo/ClubHistory/records.txt");
+    Array recordsChampionshipData = File.ReadAllLines(recordsChampionshipFile);
+
+    var relayChampionshipFile = Server.MapPath("~/App_Data/ClubInfo/ClubHistory/relay.txt");
+    Array relayChampionshipData = File.ReadAllLines(relayChampionshipFile);
+
+    var countyChampionshipFile = Server.MapPath("~/App_Data/ClubInfo/ClubHistory/county.txt");
+    Array countyChampionshipData = File.ReadAllLines(countyChampionshipFile);
+
+    var futureChampionshipFile = Server.MapPath("~/App_Data/ClubInfo/ClubHistory/future.txt");
+    Array futureChampionshipData = File.ReadAllLines(futureChampionshipFile);
+
+}
+
+<h2 style="border-bottom: gray; border-bottom-style: solid; border-bottom-width: thin;">The History of EFDSC 1977 - 2002 : Silver Jubilee Year</h2>
+
+<div class="container" style="width:auto;">
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>In our Silver Jubilee year, 2002, we are delighted to publish a history of the first 25 years of Epping Forest District Swimming Club. It was initially written in 1998 by Jeff Stumbke, our ex-Chairman and senior club official. Over the years, Jeff has probably devoted more time to the Club than anyone else and he has recently brought the history up to the present day.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+
+            <h3>Formation Of The Club</h3>
+
+            <p>Epping Forest District Swimming Club was formed at a meeting held at Epping Sports Centre on 27 October 1976. The inaugural committee was:</p>
+            <p>Chairman - Mr I Wooll</p>
+            <p>Secretary - Mr Whitehair</p>
+            <p>Treasurer - Mr Hinds</p>
+            <p>Committee Member - Mrs Brock</p>
+            <p>Committee Member - Mr Freshwater</p>
+            <p>George & Christine King joined the Committee soon after.</p>
+
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Early Years</h3>
+            @result
+            @if (result == "")
+            {
+                <p>
+                    @foreach (string dataLine in earlyYearsData)
+                    {
+                        <p>
+                            @foreach (string dataItem in dataLine.Split(delimiterChar))
+                            {
+                                @dataItem
+                            }
+                        </p>
+                    }
+               </p>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Competitive Record</h3>
+            @result
+            @if (result == "")
+            {
+                <p>
+                    @foreach (string dataLine in competitiveRecordData)
+                    {
+                    <p>
+                        @foreach (string dataItem in dataLine.Split(delimiterChar))
+                        {
+                            @dataItem
+                        }
+                    </p>
+                    }
+                    </p>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Modern Pentathlon</h3>
+            @result
+            @if (result == "")
+            {
+                <p>
+                    @foreach (string dataLine in modernPentathlonData)
+                    {
+                    <p>
+                        @foreach (string dataItem in dataLine.Split(delimiterChar))
+                        {
+                            @dataItem
+                        }
+                    </p>
+                    }
+                    </p>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Club Championships</h3>
+            @result
+            @if (result == "")
+            {
+                <p>
+                    @foreach (string dataLine in clubChampionshipData)
+                    {
+                    <p>
+                        @foreach (string dataItem in dataLine.Split(delimiterChar))
+                        {
+                            @dataItem
+                        }
+                    </p>
+                    }
+                    </p>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Club Open Galas</h3>
+            @result
+            @if (result == "")
+            {
+                <p>
+                    @foreach (string dataLine in openGalaData)
+                    {
+                    <p>
+                        @foreach (string dataItem in dataLine.Split(delimiterChar))
+                        {
+                            @dataItem
+                        }
+                    </p>
+                    }
+                    </p>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Club Records</h3>
+            @result
+            @if (result == "")
+            {
+                <p>
+                    @foreach (string dataLine in recordsChampionshipData)
+                    {
+                    <p>
+                        @foreach (string dataItem in dataLine.Split(delimiterChar))
+                        {
+                            @dataItem
+                        }
+                    </p>
+                    }
+                    </p>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>The Relay Gala</h3>
+            @result
+            @if (result == "")
+            {
+                <p>
+                    @foreach (string dataLine in relayChampionshipData)
+                    {
+                    <p>
+                        @foreach (string dataItem in dataLine.Split(delimiterChar))
+                        {
+                            @dataItem
+                        }
+                    </p>
+                    }
+                    </p>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>Essex County A.S.A</h3>
+            @result
+            @if (result == "")
+            {
+                <p>
+                    @foreach (string dataLine in countyChampionshipData)
+                    {
+                    <p>
+                        @foreach (string dataItem in dataLine.Split(delimiterChar))
+                        {
+                            @dataItem
+                        }
+                    </p>
+                    }
+                    </p>
+            }
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <h3>2027? 25 Years on...</h3>
+            @result
+            @if (result == "")
+            {
+                <p>
+                    @foreach (string dataLine in futureChampionshipData)
+                    {
+                    <p>
+                        @foreach (string dataItem in dataLine.Split(delimiterChar))
+                        {
+                            @dataItem
+                        }
+                    </p>
+                    }
+                    </p>
+            }
+        </div>
+    </div>
+
+   
+</div>
+

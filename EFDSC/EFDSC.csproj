@@ -199,6 +199,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ClubInfoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -295,6 +296,11 @@
     <Content Include="Views\Home\Contacts.cshtml" />
     <Content Include="Views\Home\_AnnouncementsPartial.cshtml" />
     <Content Include="Views\Home\_Carousel.cshtml" />
+    <Content Include="Views\ClubInfo\About.cshtml" />
+    <Content Include="Views\ClubInfo\ClubConstitution.cshtml" />
+    <Content Include="Views\ClubInfo\CodeOfConduct.cshtml" />
+    <Content Include="Views\ClubInfo\ParentGuidelines.cshtml" />
+    <Content Include="Views\ClubInfo\ClubHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

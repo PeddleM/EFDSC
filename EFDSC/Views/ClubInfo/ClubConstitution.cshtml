@@ -1,0 +1,56 @@
+﻿
+@{
+    ViewBag.Title = "ClubConstitution";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var result = "";
+    Array userData = null;
+    char[] delimiterChar = new char[] { '\r', '\n' };
+
+    var dataFile = Server.MapPath("~/App_Data/ClubInfo/Club_Constitution.txt");
+
+    if (File.Exists(dataFile))
+    {
+        userData = File.ReadAllLines(dataFile);
+        if (userData == null)
+        {
+            // Empty file.
+            result = "The file is empty.";
+        }
+    }
+    else
+    {
+        // File does not exist.
+        result = "The file does not exist.";
+    }
+}
+
+<h2 style="border-bottom: gray; border-bottom-style: solid; border-bottom-width: thin;">Club Constitution</h2>
+<div class="container" style="width:auto;">
+    <div class="row">
+        <div class="col-md-12">
+            <p><b>RULES (also to be known as the Club's "Constitution") of Epping Forest District Swimming Club</b></p>
+            <h4><i>Revised Constitution adopted February 27th  2011</i></h4>
+            <div>
+                @result
+                @if (result == "")
+            {
+                    <p>
+                        @foreach (string dataLine in userData)
+                {
+                        <p>
+                            @foreach (string dataItem in dataLine.Split(delimiterChar))
+                    {
+                                @dataItem
+                            }
+                        </p>
+                        }
+                        </p>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

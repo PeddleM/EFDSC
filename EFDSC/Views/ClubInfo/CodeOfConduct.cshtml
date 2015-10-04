@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "CodeOfConduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var result = "";
+    Array userData = null;
+    char[] delimiterChar = new char[] { '\r' , '\n' };
+
+    var dataFile = Server.MapPath("~/App_Data/ClubInfo/Code_Of_Conduct.txt");
+
+    if (File.Exists(dataFile))
+    {
+        userData = File.ReadAllLines(dataFile);
+        if (userData == null)
+        {
+            // Empty file.
+            result = "The file is empty.";
+        }
+    }
+    else
+    {
+        // File does not exist.
+        result = "The file does not exist.";
+    }
+}
+
+<h2 style="border-bottom: gray; border-bottom-style: solid; border-bottom-width: thin;">Code Of Conduct</h2>
+
+<div class="container" style="width:auto;">
+    <div class="row">
+        <div class="col-md-12">
+
+            @result
+            @if (result == "")
+            {
+                <ol>
+                    @foreach (string dataLine in userData)
+                    {
+                                foreach (string dataItem in dataLine.Split(delimiterChar))
+                                {
+                                    <li>@dataItem</li>
+                                }
+                    }
+                </ol>
+            }
+
+            <p><b>REMEMBER</b> - the aims of the sport are to swim for yourself and for the enjoyment of it, have fun, improve your skills and feel good!</p>
+
+            <p>Additional reading: <a href="http://www.swimming.org/assets/uploads/library/Section2v1JD090909_Section_2.pdf" target="_blank">ASAs WAVEpower document containing code of conduct information</a></p>
+
+        </div>
+    </div>
+</div>
+

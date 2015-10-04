@@ -26,7 +26,23 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", htmlAttributes: new { style = "color: #FEDD02" })</li>
                     <li>@Html.ActionLink("Contacts", "Contacts", "Home", htmlAttributes: new { style = "color: #FEDD02" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", htmlAttributes: new { style = "color: #FEDD02" })</li>
+                    @*<li>@Html.ActionLink("About", "About", "Home", htmlAttributes: new { style = "color: #FEDD02" })</li>*@
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" style="color: #FEDD02;">Club Info <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("About EFDSC", "About", "ClubInfo")</li>
+                            <li>@Html.ActionLink("Club Constitution", "ClubConstitution", "ClubInfo")</li>
+                            <li>@Html.ActionLink("Code Of Conduct", "CodeOfConduct", "ClubInfo")</li>
+                            <li>@Html.ActionLink("Parent/Carer Guidelines", "ParentGuidelines", "ClubInfo")</li>
+                            <li>@Html.ActionLink("Club History", "ClubHistory", "ClubInfo")</li>
+                            @*<li><a href="#">Another action</a></li>
+                            <li><a href="#">Something else here</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">Separated link</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">One more separated link</a></li>*@
+                        </ul>
+                    </li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>

@@ -1,0 +1,67 @@
+﻿
+@{
+    ViewBag.Title = "About EFDSC";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var result = "";
+    Array userData = null;
+    char[] delimiterChar = new char[] { '\r', '\n' };
+
+    var dataFile = Server.MapPath("~/App_Data/ClubInfo/About_EFDSC_Intro.txt");
+
+    if (File.Exists(dataFile))
+    {
+        userData = File.ReadAllLines(dataFile);
+        if (userData == null)
+        {
+            // Empty file.
+            result = "The file is empty.";
+        }
+    }
+    else
+    {
+        // File does not exist.
+        result = "The file does not exist.";
+    }
+}
+
+<h2 style="border-bottom: gray; border-bottom-style: solid; border-bottom-width: thin;">EFDSC Club Information</h2>
+
+<div>
+    @result
+    @if (result == "")
+    {
+        <p>
+            @foreach (string dataLine in userData)
+            {
+                <p>
+                    @foreach (string dataItem in dataLine.Split(delimiterChar))
+                    {
+                    @dataItem
+                    }
+                </p>
+            }
+        </p>
+    }
+</div>
+
+<h2 style="border-bottom: gray; border-bottom-style: solid; border-bottom-width: thin;">The Committee</h2>
+
+<div class="container text-center" style="width:auto;">
+    <div class="row">
+        <div class="col-md-6">
+            <h3><u>Officers</u></h3>
+            <p><b>Chair</b> - </p>
+            <p><b>Hon. Treasurer</b> - James Clifford</p>
+            <p><b>Hon. Secretary</b> - Fiona Jones</p>
+            <p><b>Welfare Officer</b> - Jacque Beer</p>
+        </div>
+        <div class="col-md-6">
+            <h3><u>Committee Members</u></h3>
+            <p>Sue Levy - Gary Wise - Toby Scrutton</p>
+            <p>Suzanne Peddle - Steven Davidson - Jenny Treglohan</p>
+            <p>Karen Kelly - Susie Rawlings - Amanda Nelson</p>
+            <p>Andy Flowers</p>
+        </div>
+    </div>
+</div>

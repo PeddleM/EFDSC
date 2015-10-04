@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "ParentGuidelines";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var result = "";
+    Array userData = null;
+    char[] delimiterChar = new char[] { '\r', '\n' };
+
+    var dataFile = Server.MapPath("~/App_Data/ClubInfo/Parent_Guidelines.txt");
+
+    if (File.Exists(dataFile))
+    {
+        userData = File.ReadAllLines(dataFile);
+        if (userData == null)
+        {
+            // Empty file.
+            result = "The file is empty.";
+        }
+    }
+    else
+    {
+        // File does not exist.
+        result = "The file does not exist.";
+    }
+}
+
+<h2 style="border-bottom: gray; border-bottom-style: solid; border-bottom-width: thin;">Parent Guidelines</h2>
+
+<div class="container" style="width:auto;">
+    <div class="row">
+        <div class="col-md-12">
+
+            @result
+            @if (result == "")
+            {
+                <ol>
+                    @foreach (string dataLine in userData)
+                    {
+                        foreach (string dataItem in dataLine.Split(delimiterChar))
+                        {
+                            if (dataItem.Contains("www.britishswimming.org"))
+                            {
+                                <li>All parents/carers should adhere to the ASA's Child protection policy, a copy of which can be found on the ASA's web site <a href="http://www.britishswimming.org" target="_blank">www.britishswimming.org</a></li>
+                            }
+                            else
+                            {
+                                <li>@dataItem</li>
+                            }
+                        }
+                    }
+                </ol>
+            }
+
+        </div>
+    </div>
+</div>
+
+
+
